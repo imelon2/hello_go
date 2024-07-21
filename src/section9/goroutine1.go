@@ -39,10 +39,11 @@ func main() {
 	// 단점 : 구현하기 어려움, 테스트 및 디버깅 어려움, 전체 프로세스의 사이트 이펙트 발생, 성능 저하, 동기화 코딩 필수
 	// 		 데드락...
 
-	// 데몬스레드 : 메인 쓰레드가 끝나면 다른 쓰레드도 종료
+	// 데몬스레드 : 메인 쓰레드가 끝나면 다른 쓰레드도 종료 !!!
 	exe1()
 
 	fmt.Println("Main Routine Start", time.Now())
+
 	// func Main이 1초만에 끝나버리면 다른 고루틴은 같이 종료된다.
 	go exe2() // demin tread
 	go exe3() // demin tread
